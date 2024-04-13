@@ -86,6 +86,21 @@ namespace Lab3
             insertionSort.Sort(ref list);
         }
 
+        [Benchmark]
+        public void QuickSort()
+        {
+            QuickSort<int> quickSort = new QuickSort<int>();
+
+            quickSort.Sort(ref list);
+        }
+
+        [Benchmark]
+        public void HeapSort()
+        {
+            HeapSort<int> heapSort = new HeapSort<int>();
+
+            heapSort.Sort(ref list);
+        }
 
         [Benchmark]
         public void RadixSort()
@@ -95,6 +110,13 @@ namespace Lab3
             radixSort.Sort( array );
         }
 
+        [Benchmark]
+        public void BucketSort()
+        {
+            BucketSort bucketSort = new BucketSort();
+
+            bucketSort.Sort(array);
+        }
 
         private List<int> GenerateRandomIntList(int length, int maxValue)
         {
